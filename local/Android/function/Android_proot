@@ -502,7 +502,7 @@ rm_proot() {
 				;;
 		esac
 		log "num1=$num1 op=$op_symbol num2=$num2 correct_result=$correct_result"
-		read -e -p "🧮 人类验证：${num1}${op_symbol}${num2}=?" user_input
+		read -e -p "🧮 真人验证：${num1}${op_symbol}${num2}=?" user_input
 		log "user_input=$user_input"
 		if ! [[ "$user_input" =~ ^[0-9]+$ ]]; then
 			echo -e "\e[91m❌ 错误！请输入有效的数字答案 \e[0m"

@@ -113,7 +113,7 @@ show_endmtool_art() {
      sleep 1
 
      echo -e "${CYAN}■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■${RESET}"
-     echo -e "${RED}▶${YELLOW}▶${GREEN}▶${CYAN}      EndmTool V26.3.7      ${GREEN}◀${YELLOW}◀${RED}◀${RESET}"
+     echo -e "${RED}▶${YELLOW}▶${GREEN}▶${CYAN}      EndmTool V26.4.0      ${GREEN}◀${YELLOW}◀${RED}◀${RESET}"
      echo -e "${CYAN}■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■${RESET}\n"
 }
 
@@ -1438,15 +1438,15 @@ EndmTool_menu() {
     while true; do
         choice=$(whiptail --clear \
             --backtitle "" \
-            --title "EndmTool V26.3.7" \
+            --title "EndmTool V26.4.0" \
             --menu "✨ 请选择类别： \n
-在这里,从这一刻开始！ \n
+更好用！为你带来更多不可能！ \n
 🔧 提示：使用 ↓↑ 键导航，按 Enter 确认" \
             0 60 0 \
             "1" "💼 软件中心 —— 应用宝库" \
             "2" "🗄 工具箱 —— 一些有用的工具" \
             "3" "🚀 网速测试 —— 实时网络性能检测" \
-            "4" "🗄️ PPA源管理 —— 配置软件源" \
+            "4" "👑 PPA源管理 —— 配置软件源" \
             "5" "🔁 切换脚本管理 —— 进入切换脚本管理" \
             "6" "🍥 升级Debian版本 —— 请确保使用的是Debian系统" \
             "0" "🌚 退出工具" \
@@ -1471,7 +1471,7 @@ speed_test() {
     echo -e "══════════════════════════════════════${RESET}"
 
     for i in {20..1}; do
-        echo -en "${YELLOW}⚠ 即将开始测速，此操作可能会消耗您数十至上百兆的流量 (剩余: ${i}s) [Y/N]: ${RESET}"
+        echo -en "${YELLOW}⚠️ 即将开始测速，此操作可能会消耗您数十至上百兆的流量 (剩余: ${i}s) [Y/N]: ${RESET}"
         if read -t 1 -n 1 -r confirm; then
             case $confirm in
                 [Yy]) 

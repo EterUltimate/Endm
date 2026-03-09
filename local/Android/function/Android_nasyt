@@ -32,6 +32,7 @@ fi
 clear
 echo -e "\033[1;36m🚀 启动 Nasyt 工具箱... \033[0m"
 sleep 1
+clear
 nasyt
 }
 

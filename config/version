@@ -1,5 +1,5 @@
 {
-    "version": "26.3.7",
+    "version": "26.4.0",
     "git_clone": "YingLi606/Endm",
-    "description": "修复了若干使用问题"
+    "description": "优化并提升稳定性（其他懒得写了）"
 }
