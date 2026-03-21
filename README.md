@@ -1,57 +1,138 @@
-注意：由于开发者精力有限，该项目已停止维护，可能会存在不稳定情况；由此给各位带来不便，敬请谅解
-
 # Endm
-新起点，再出发！
 
-一个用于管理软件安装、配置和系统优化的脚本工具，旨在简化Proot容器的日常操作。
+[English](README_en.md) | 中文
 
-该脚本仅支持Termux-Android！
+一个为 Android Termux 用户设计的 proot 管理工具，也可用于 Linux 服务器。
 
-温馨提示：本脚本不会向每位用户提供付费和摧毁系统等服务，如有用户购买过来的，那您已被上当受骗！建议请各位擦亮眼睛！！
+## 功能特性
 
-## 介绍
+- Android/Termux 支持 - 专为 Termux 优化的 proot 管理
+- Linux 服务器支持 - 支持在 Linux 服务器上运行
+- Minecraft 服务器 - 快速部署 Java 版 Minecraft 服务器
+- 性能优化 - 内置 proot 优化脚本
+- 自动更新 - 支持自动检查更新
 
-Endm 是一个基于 Shell 的系统管理工具，提供多种常用软件的安装、卸载、管理Proot容器以及垃圾清理等功能。适用于希望快速配置开发环境或优化系统的用户。
+## 系统要求
 
-## 软件架构
+### Android (Termux)
 
-该脚本采用模块化设计，每个功能模块对应一个特定任务，例如：
+- Android 7.0 或更高版本
+- Termux 最新版
+- 存储空间至少 2GB
 
-- 安装与卸载容器（适用于管理Linux容器）
-- Android软件商店（公测）
-- 垃圾清理（释放垃圾）
+### Linux 服务器
 
-## 安装教程
+- Ubuntu 18.04+ / Debian 10+ / CentOS 7+
+- 1GB+ RAM
+- 5GB+ 可用磁盘空间
 
-1. 确保系统已安装 `git` 和 `whiptail`(请确保在termux里)。
-2. 下载脚本：
-   ```bash
-   git clone https://github.com/YingLi606/Endm.git
-   ```
+## 安装
 
-## 使用说明
+### 快速安装 (Termux)
 
-运行脚本：
 ```bash
-bash ~/Endm/endm.sh
+# 安装必要组件
+pkg update
+pkg install git curl wget
+
+# 克隆仓库
+git clone https://github.com/EterUltimate/Endm.git ~/.Endm
+
+# 运行安装
+bash ~/.Endm/endm.sh -s
 ```
 
-根据菜单选择所需功能（如安装软件）
+### 快速安装 (Linux)
 
-## 参与贡献
+```bash
+# 安装必要组件 (Debian/Ubuntu)
+apt-get update
+apt-get install -y git curl wget
 
-欢迎提交 Issue 和 Pull Request。请遵循以下流程：
+# 克隆仓库
+git clone https://github.com/EterUltimate/Endm.git /opt/Endm
 
-1. Fork 项目
-2. 创建新分支
-3. 提交更改
-4. 发起 Pull Request
+# 运行安装
+sudo bash /opt/Endm/endm.sh -s
+```
 
-## 特技
+## 使用方法
 
-- 自动检测系统环境并提示适配选项
-- 提供分类清晰的交互式菜单
+### 命令行选项
 
-## 协议
+| 参数 | 说明 |
+|------|------|
+| -h, --help | 显示帮助信息 |
+| -s, --start | 开始安装/配置 |
+| -u, --update | 更新 Endm |
+| --debug | 调试模式 |
 
-本项目遵循副本License，请参阅 LICENSE 文件获取详细信息。
+### 交互式菜单
+
+```bash
+# 启动交互式菜单
+bash endm.sh
+```
+
+## 项目结构
+
+```
+Endm/
+├── endm.sh              # 主程序入口
+├── config/              # 配置文件目录
+│   ├── config.sh        # 用户配置
+│   └── version          # 版本信息
+├── function/            # 核心功能函数
+│   ├── update.sh       # 更新功能
+│   ├── proot_optimization  # proot 优化
+│   └── proot_proc/     # proot 进程模拟
+├── local/
+│   ├── Android/        # Android/Termux 专用
+│   └── Linux/          # Linux 服务器专用
+└── README.md           # 本文档
+```
+
+## 配置
+
+配置文件位于 ~/.Endm/config/config.sh（Termux）或 /opt/Endm/config/config.sh（Linux）。
+
+### 可配置项
+
+- git - Git 镜像源
+- rawgit - 原始文件镜像源
+- auto_upgrade - 自动更新开关 (true/false)
+- QQbot - QQ 机器人配置
+
+## 常见问题
+
+### Q: 安装失败怎么办？
+
+A: 请确保已安装 git, curl, wget。如果没有网络，请配置镜像源。
+
+### Q: proot 运行缓慢？
+
+A: 运行内置优化脚本：bash function/proot_optimization
+
+### Q: 如何更新到最新版本？
+
+A: 运行 bash endm.sh -u
+
+## 贡献指南
+
+欢迎提交 Issue 和 Pull Request！
+
+请查看 CONTRIBUTING.md 了解贡献流程。
+
+## 许可证
+
+本项目采用 MIT 许可证 - 查看 LICENSE 了解详情。
+
+## 免责声明
+
+- 本工具仅供学习交流使用
+- 请勿用于商业用途
+- 使用本工具造成的后果由用户自行承担
+
+Star 本项目以示支持！
+
+2024-2026 Endm Project
